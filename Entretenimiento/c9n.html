@@ -1,64 +1,71 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ClickTv</title>
-	<script language="JavaScript" type="text/javascript" CHARSET="UTF-8" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<title>ToonsHub.ml | Download from Oncehelp</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type='text/javascript' src='https://content.jwplatform.com/libraries/IDzF9Zmk.js'></script>
+<script type="text/javascript">jwplayer.key = 'Khpp2dHxlBJHC8MCmLnBuV2jK/DwDnJMniwF6EO9HC/riJ712ZmbHg==';</script>
+<style>
+.container
+{
+    width: 100%;
+    height: auto;
+}
+body
+{
+    overflow-x: hidden; overflow-y: hidden; 
+  background-color: #000000;
+}
+#content
+{
+    position:absolute; left: 0; right: 0; bottom: 0; top: 0px;
+}
+</style>
 </head>
 <body>
-	
+<div class="container">
+<div id='vplayer' style="width: 100%; height: auto; text-align: center;">
+</div>
+</div>
+<script>
+        jwplayer("vplayer").setup(
+    {
+    sources:[
+        { file:"https://deh05ueq91v6s.cloudfront.net/C9NPY/031fe10f99063bb9e8271716ce50b133.sdp/playlist.m3u8"}
+          ],
 
-	
-    <script type="text/javascript" src="https://cdn.jwplayer.com/libraries/aQDy6l4L.js"></script>
-		<script type="text/javascript">jwplayer.key="cbPZjCLEJ+O5oZl0AvaDQqyb50+ydDAD5kEqJuS10Zg=";</script>
-		<div id="vplayer" style="width:100%;height:100%;text-align:center;"></div>
+    autostart: true,
+    image:"https://www.finsmes.com/wp-content/uploads/2021/06/jwplayer.jpg",width:"100%",height:"auto",stretching:"no",duration:"",preload:'none',androidhls:"true",hlshtml:"false",primary:"html5",startparam:"start",playbackRateControls:[0.25,0.5,0.75,1,1.25,1.5,2],
+		abouttext:"ToonsHub",aboutlink:"",logo:
+		{
+		file:"",link:"",position:"top-right",margin:"5",hide:true
+	}
+}
+);
+var vvplay,vvad,x2ok=0;
+var vastdone1=0,vastdone2=0;
+var player=jwplayer();
+player.on('time',function(x)
+	{
+	if(5>0&&x.position>=5&&vvad!=1)
+		{
+		vvad=1;
+		$('div.video_ad_fadein').fadeIn('slow')
+	}
+	if(x2ok==0&&x.position>=1088&&x.position<=(1088+2))
+		{
+		x2ok=x.position
+	}
+}
+);
+player.on('play',function(x)
+	{
+	doPlay(x)
+}
+);
 
 
-			<script type="text/javascript">
-		    jwplayer("vplayer").setup({
-		        sources: [{
-		            file: "https://deh05ueq91v6s.cloudfront.net/C9NPY/031fe10f99063bb9e8271716ce50b133.sdp/playlist.m3u8",
-		            label: "Auto"
-		        }],
-		        width: $(window).width(),
-		        height: $(window).height(),
-		        preload: "none",
-		        tracks: [{
-			file: "#",
-			label: "Subs",
-			kind:  "captions",
-			default: "true",
-			}],
-			captions: {
-			color: "#FF66CC",
-			fontSize: 14,
-			edgeStyle: "uniform",
-			backgroundOpacity: 0,
-			},
-		        primary: "html5",
-		        cast: {}
-		    });
-		    var jw_retry_count = 0;
-		    jwplayer().onError(function() {
-		        if (jw_retry_count < 6) {
-		            setTimeout(function() {
-		                jw_retry(jwplayer("vplayer").getPlaylistItem()["file"]);
-		            }, 2000);
-		        }
-		    });
 
-		    function jw_retry($v) {
-		        jwplayer().load([{
-		            sources: [{
-		                file: $v,
-		                
-		                label: "Auto"
-		            }]
-		        }]);
-		        jwplayer().play();
-		        jw_retry_count = jw_retry_count + 1;
-		    }
-		</script>
+	</script>
 </body>
 </html>
